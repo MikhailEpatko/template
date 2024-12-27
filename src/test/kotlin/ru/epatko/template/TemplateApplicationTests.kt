@@ -11,5 +11,4 @@ class TemplateApplicationTests {
 	fun contextLoads() {
 		assertTrue(true)
 	}
-
 }
