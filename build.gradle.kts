@@ -1,9 +1,10 @@
 plugins {
-	kotlin("jvm") version "1.9.25"
-	kotlin("plugin.spring") version "1.9.25"
+	kotlin("jvm") version "2.0.10"
+	kotlin("plugin.spring") version "2.0.10"
 	id("org.springframework.boot") version "3.4.1"
 	id("io.spring.dependency-management") version "1.1.7"
-	kotlin("plugin.jpa") version "1.9.25"
+	id("io.gitlab.arturbosch.detekt") version "1.23.7"
+	kotlin("plugin.jpa") version "2.0.10"
 }
 
 group = "ru.epatko"
@@ -13,6 +14,13 @@ java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
+}
+
+detekt {
+	config.setFrom("detekt/config.yml")
+	buildUponDefaultConfig = false
+	parallel = true
+	basePath = projectDir.path
 }
 
 repositories {
