@@ -4,6 +4,6 @@ import jakarta.validation.constraints.NotBlank
 
 data class CreateNullableRequest(
 
-    @field:NotBlank(message = "Не может быть пустым")
+    @field:NotBlank(message = "May not be blank")
     val name: String? = null,
 )
